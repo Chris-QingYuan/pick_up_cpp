@@ -38,6 +38,7 @@
         "xmemory0": "cpp",
         "xstddef": "cpp",
         "xtr1common": "cpp",
-        "numeric": "cpp"
+        "numeric": "cpp",
+        "ctime": "cpp"
     }
 }

@@ -7,13 +7,13 @@
 double compoundInterest(double invest, double rate)
 {
     double compoundRate = 1.0f;
-    
-    for(int i = 0; i < 10; i++)
+
+    for (int i = 0; i < 10; i++)
     {
-        compoundRate *= ( 1.0 + rate/100.0);
+        compoundRate *= (1.0 + rate / 100.0);
     }
-    
-    return invest * compoundRate;    
+
+    return invest * compoundRate;
 }
 
 int main(int argc, char const *argv[])
