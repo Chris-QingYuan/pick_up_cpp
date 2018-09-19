@@ -5,47 +5,27 @@
 #include <numeric>
 #include <sstream>
 
-std::vector<std::string> strToVec(std::string str, char separator);
-
-std::string vecToStr(std::vector<std::string> vec, char separator);
+std::string ceasarCipher(std::string str, int shift, bool encrypt);
 
 int main(int argc, char const *argv[])
 {
-    std::vector<std::string> vecCust(3);
 
-    vecCust[0] = "Bob";
-    vecCust[1] = "Susan";
-    vecCust[2] = "Lee";
-
-    std::string sCusts = vecToStr(vecCust, ' ');
-    std::cout << sCusts << "\n";
+    std::string str = "what else do you want that is what you need";
+    std::string encryped = ceasarCipher(str, 4, true);
+    std::string decryped = ceasarCipher(encryped, 4, false);
+    std::cout << "encryped : " << encryped << std::endl;
+    std::cout << "decryped : " << decryped << std::endl;
 
     return 0;
 }
 
-std::string vecToStr(std::vector<std::string> vec, char separator)
+std::string ceasarCipher(std::string str, int shift, bool encrypt)
 {
     std::string res = "";
+    shift = encrypt ? shift : -shift;
 
-    for (std::string ele : vec)
-    {
-        res.append(ele);
-        res += separator;
-    }
+    for (char c : str)
+        res += (char)((int)c + shift);
+
     return res;
-}
-
-std::vector<std::string> strToVec(std::string str, char separator)
-{
-    std::vector<std::string> words;
-
-    std::stringstream ss(str);
-    std::string tmp;
-
-    while (getline(ss, tmp, separator))
-    {
-        words.push_back(tmp);
-    }
-
-    return words;
 }
