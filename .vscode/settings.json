@@ -39,6 +39,7 @@
         "xstddef": "cpp",
         "xtr1common": "cpp",
         "numeric": "cpp",
-        "ctime": "cpp"
+        "ctime": "cpp",
+        "algorithm": "cpp"
     }
 }
