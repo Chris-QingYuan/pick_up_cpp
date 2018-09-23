@@ -25,23 +25,25 @@ struct Shape
     int id;
 };
 
-struct Circle : Shape
-{
-    Circle(double rad)
-    {
-        this->length = rad;
+
+struct  Circle : Shape{
+    Circle(double rad ){
+        this -> length = rad;
     }
-    double area()
-    {
-        return 3.14159 * std::pow(length / 2, 2);
+    double area(){
+        return 3.14159 * std::pow(length/2,2);
     }
+
 };
 
+
 int main(int argc, char const *argv[])
-{   
-    int y;
-    int x = y = 3;
-    std::cout << "x : " <<  x  << "y : " <<  y  << "\n";
+{
+    Shape sh(10,10);
+    std::cout << "Square area : " << sh.area() << "\n";
+
+    Circle cir(10);
+    std::cout << "Circle area : " << cir.area() << "\n";
 
     return 0;
 }
